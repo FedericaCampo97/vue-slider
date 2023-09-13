@@ -36,12 +36,24 @@ createApp({
     },
     methods: {
         next(){
-            this.activeSlide = slides[this.index + 1]
-            this.index = this.index +1
+            if(this.index != this.slides.length -1){
+                this.activeSlide = slides[this.index + 1]
+                this.index = this.index +1
+            }
+            else{
+                this.activeSlide = slides[0]
+                this.index = 0
+            }
         },
         prev(){
-            this.activeSlide = slides[this.index - 1]
-            this.index = this.index -1
+            if(this.index != 0){
+                this.activeSlide = slides[this.index - 1]
+                this.index = this.index -1
+            }
+            else{
+                this.activeSlide = slides[this.slides.length - 1]
+                this.index = this.slides.length - 1
+            }
         }
     },
     mounted(){
