@@ -35,9 +35,13 @@ createApp({
         }
     },
     methods: {
-        click(){
+        next(){
             this.activeSlide = slides[this.index + 1]
             this.index = this.index +1
+        },
+        prev(){
+            this.activeSlide = slides[this.index - 1]
+            this.index = this.index -1
         }
     },
     mounted(){
