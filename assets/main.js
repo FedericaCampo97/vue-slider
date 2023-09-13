@@ -31,13 +31,13 @@ createApp({
         return {
             slides: [],
             activeSlide : {},
-            index: 0
+            index : 0
         }
     },
     methods: {
         click(){
             this.activeSlide = slides[this.index + 1]
-            this.index = +1
+            this.index = this.index +1
         }
     },
     mounted(){
