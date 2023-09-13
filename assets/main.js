@@ -25,21 +25,23 @@ const slides = [
     console.log(slides);
 
 const { createApp } = Vue
-let activeSlide = slides[0]
-console.log(activeSlide)
 
 createApp({
     data() {
         return {
-            slides : slides,
-            activeSlide : activeSlide
-
+            slides: [],
+            activeSlide : {},
+            index: 0
         }
     },
     methods: {
         click(){
-            activeSlide = slides[1]
-            console.log(activeSlide)
+            this.activeSlide = slides[this.index + 1]
+            this.index = +1
         }
+    },
+    mounted(){
+        this.activeSlide = slides[0]
+        this.slides = slides
     }
 }).mount('#app')
